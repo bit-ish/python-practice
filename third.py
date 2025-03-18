@@ -2,6 +2,7 @@ class User:
     def __init__(self,user_id,username):
         self.id=user_id
         self.username=username
+
         self.follower=0
         self.following=0
     # defining method
@@ -16,7 +17,4 @@ user_1.follow(user_2)
 
 print(f"{user_1.follower}\n{user_1.following}\n{user_2.follower}\n{user_2.following}")
 
-# print(user_2.id)
-# print(user_2.username)
-# print(user_1.follower)
 
