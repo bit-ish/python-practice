@@ -1,12 +1,30 @@
-# created an empty class using "pass"
-class User:
-    pass
 
-# making an object from class
-user_1=User()
+import turtle as t
+import random
 
-# making attributes
-user_1.id="001"
-user_1.username="IshY"
+sandy=t.Turtle()
+my_screen=t.Screen()
 
-print(f"{user_1.id}\n{user_1.username}")
+sandy.shape("turtle")
+sandy.color("blue","white")
+
+
+colors=["blue","red","yellow","pink","black","cyan","magenta","green","orange"]
+sides=3
+
+while sides<13:
+    sandy.color(random.choice(colors))
+
+    for a in range(sides):
+        # sandy.color(random.choice(colors))
+        sandy.fd(50)
+        sandy.left(360/sides)
+    sides+=1
+
+
+
+
+
+my_screen.exitonclick()
+
+>>>>>>>
