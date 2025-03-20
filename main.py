@@ -27,4 +27,3 @@ while sides<13:
 
 my_screen.exitonclick()
 
->>>>>>>
