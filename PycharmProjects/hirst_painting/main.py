@@ -36,6 +36,8 @@ for a in range(10):
     for _ in range(10):
         pichu.dot(25,random.choice(color_list))
         pichu.fd(60)
+
+
     pichu.teleport(pichu.xcor()-600,pichu.ycor()+65)
 
 pichu.ht()
