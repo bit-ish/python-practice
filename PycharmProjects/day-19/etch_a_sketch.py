@@ -16,7 +16,10 @@ def move_right():
     timmy.right(10)
 
 def clr_screen():
-    my_screen.clearscreen()
+    timmy.clear()
+    timmy.penup()
+    timmy.home()
+    timmy.pendown()
 
 
 
