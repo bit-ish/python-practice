@@ -1,50 +1,31 @@
+from turtle import Turtle,Screen
 import time
-from turtle import Screen, Turtle
-from turtledemo.penrose import start
+from snake import Snake
 
-screen=Screen()
-screen.setup(height=600,width=600)
-screen.bgcolor("black")
-screen.title(" My Snake Game ! ")
-screen.tracer(0)
+my_screen=Screen()
+my_screen.screensize(600,600,"black")
+my_screen.title("My Stupid Snake")
+my_screen.tracer(0)
+
+starting_pos=[]
+
+saanp=Snake()
+
+my_screen.listen()
+my_screen.onkey(saanp.up,"Up")
+my_screen.onkey(saanp.down,"Down")
+my_screen.onkey(saanp.left,"Left")
+my_screen.onkey(saanp.right,"Right")
 
 
-
-positions=[(0,0),(-20,0),(-40,0)]
-
-segments=[]
-
-for _ in positions:
-    new_segment=Turtle("square")
-    new_segment.color("white")
-    new_segment.penup()
-    new_segment.goto(_)
-    segments.append(new_segment)
-
-game_is_on=True
+game_is_on = True
 
 while game_is_on:
-    screen.update()
+    my_screen.update()
     time.sleep(0.1)
-    # for seg in segments:
-    #     seg.fd(20)
-    for seg_num in range(len(segments)-1 ,0,-1):
-        new_x= segments[seg_num-1].xcor()
-        new_y= segments[seg_num-1].ycor()
-        segments[seg_num].goto(new_x,new_y)
 
-    segments[0].fd(20)
+    saanp.move()
 
 
 
-
-
-
-
-
-
-
-
-
-
-screen.exitonclick()
+my_screen.exitonclick()
