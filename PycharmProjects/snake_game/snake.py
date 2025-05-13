@@ -2,6 +2,7 @@ from turtle import Turtle,Screen
 
 MOVE=20
 ''' constants are written in upper case. '''
+STARTING_POSTION=[(-20,0),(-40,0),(-60,0)]
 
 UP=90
 DOWN=270
@@ -13,15 +14,28 @@ class Snake:
     def __init__(self):
         self.segments = []
         self.create_snake()
+        '''⬆️This will be executed whenever Snake class is used '''
         self.head=self.segments[0]
 
+    # def create_snake(self):
+    #     for num in range(0, 10):
+    #         self.add_segment()
     def create_snake(self):
-        for num in range(0, 10):
-            turtly = Turtle("square")
-            turtly.color("white")
-            turtly.penup()
-            turtly.goto(x=-num * 20, y=0)
-            self.segments.append(turtly)
+        for position in STARTING_POSTION:
+            self.add_segment(position)
+
+
+    def add_segment(self,position):
+        turtly = Turtle("square")
+        turtly.color("white")
+        turtly.penup()
+        turtly.goto(position)
+        self.segments.append(turtly)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
+
+
 
     def move(self):
 
