@@ -5,7 +5,25 @@ from scoreboard import Scoreboard
 import time
 screen=Screen()
 
-screen.screensize(800,500,"black")
+#
+timmy=Turtle()
+timmy.color("white")
+timmy.hideturtle()
+timmy.penup()
+timmy.goto(-400,270)
+timmy.pendown()
+timmy.goto(400,270)
+
+timmy2=Turtle()
+timmy2.color("white")
+timmy2.hideturtle()
+timmy2.penup()
+timmy2.goto(-400,-270)
+timmy2.pendown()
+timmy2.goto(400,-270)
+#
+
+screen.screensize(800,400,"black")
 screen.title("MY BONG GAME ")
 screen.tracer(0)
 
@@ -31,7 +49,7 @@ while game_on:
     screen.update()
     ball.move()
 
-    if ball.ycor() > 280 or ball.ycor() <- 280 :
+    if ball.ycor() > 250 or ball.ycor() <- 250 :
          ball.v_bounce()
 
     if ball.xcor()> 330 and ball.distance(paddle_R) < 55 or ball.xcor()< -330 and ball.distance(paddle_L) < 55 :
